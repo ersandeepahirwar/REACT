@@ -125,3 +125,18 @@ It enables users to :
 
 * Manage content efficiently.
 * Edit and publish content without delays.
+
+### Components
+
+A **Component** is a reusable piece of UI that has its own logic and rendering system.
+
+* Each component manages its own behavior and rendering.
+* When a component's **local state** changes, it re-renders to reflect the updated data.
+
+### ES Modules
+
+**ES Modules** are JavaScript files that export code such as functions, classes, variables, objects, or other values, which can be imported and used in other files.
+
+* Promote a modular code structure.
+* Help break large applications into **smaller, reusable modules**.
+* Improve code organization and maintainability.
