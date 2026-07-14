@@ -205,3 +205,59 @@ const [state, setState] = useState(initialValue);
 * Passing callbacks to memoized child components.
 * Preventing unnecessary function recreation.
 * Optimizing performance in large applications.
+
+### `useRef()`
+
+* `useRef()` is a **React Hook** used to **store a value** or **access a DOM element**.
+* It returns a **ref object** with a `current` property.
+* The value stored in `current` **persists between re-renders**.
+* Changing `current` **does not** re-render the component.
+
+#### Syntax
+
+```
+const ref = useRef(initialValue);
+```
+
+**Common use cases :**
+
+* Accessing DOM elements.
+* Focusing an input field.
+* Storing values without causing a re-render.
+* Keeping the previous value of a variable.
+
+### Props Drilling
+
+**Props Drilling** is the process of passing props from a parent component to a deeply nested child component through intermediate components.
+
+#### Why is Props Drilling Problematic?
+
+* Makes the code harder to read and maintain.
+* Intermediate components receive props they don't use.
+* Adding or updating props requires changes in multiple components.
+* Becomes difficult to manage in large applications.
+
+#### How to Avoid Props Drilling
+
+* Use the **Context API** to share data without passing props through every component.
+* Use state management libraries like **Redux**, **Zustand**, or **Recoil** for managing global state.
+* Keep state as close as possible to the components that use it to reduce unnecessary prop passing.
+
+### Context API
+
+The **Context API** is a React feature used to **share data between components** without passing props through every level of the component tree.
+
+#### Benefits
+
+* Avoids **props drilling**.
+* Makes data sharing easier.
+* Keeps the code cleaner and easier to maintain.
+* Allows multiple components to access the same data.
+
+#### Common Use Cases
+
+* User authentication.
+* Theme ( Light / Dark mode ).
+* Language preferences.
+* User profile information.
+* Global application settings.
