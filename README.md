@@ -140,3 +140,68 @@ A **Component** is a reusable piece of UI that has its own logic and rendering s
 * Promote a modular code structure.
 * Help break large applications into **smaller, reusable modules**.
 * Improve code organization and maintainability.
+
+### `useState()`
+
+* `useState()` is a **React Hook** used to add **state** to functional components.
+* It returns an **array** containing the current state value and a state updater function.
+* Updating the state causes the component to **re-render** with the new value.
+* The initial state is passed as an argument to `useState()`.
+
+#### Syntax
+
+```
+const [state, setState] = useState(initialValue);
+```
+
+**Common use cases :**
+
+* Managing form inputs.
+* Toggling UI elements.
+* Updating counters.
+* Storing user data or component-specific state.
+
+### `useEffect()`
+
+* `useEffect()` is a **React Hook** used to perform **side effects** in functional components.
+* Common use cases include :
+  * Fetching data from an API.
+  * Updating the DOM.
+  * Setting up timers.
+  * Subscribing to external services or events.
+* The setup function runs **after the component renders**.
+* The **return value** of `useEffect()` is `undefined`.
+* The function returned from the setup function is called the **cleanup function**, which runs :
+  * Before the effect runs again ( if dependencies change ).
+  * When the component unmounts.
+* In **React Strict Mode** ( development only ), `useEffect()` runs **twice on the initial render** to help detect unexpected side effects. This behavior does **not** occur in production.
+
+### `useMemo()`
+
+* `useMemo()` is a **React Hook** used to **memoize** the result of an expensive calculation.
+* It recalculates the value **only when one of its dependencies changes**.
+* Helps improve performance by **avoiding unnecessary recalculations**.
+* Returns the **memoized value**.
+* If the dependencies do not change, React returns the **cached value** instead of running the calculation again.
+
+**Common use cases :**
+* Expensive calculations.
+* Filtering or sorting large arrays.
+* Preventing unnecessary recomputations during re-renders.
+
+> * `useEffect()` → **Dependency array is optional.**
+> * `useMemo()` → **Dependency array is mandatory.**
+
+### `useCallback()`
+
+* `useCallback()` is a **React Hook** used to **memoize a function**.
+* It returns the **same function reference** unless one of its dependencies changes.
+* Helps prevent **unnecessary re-renders** of child components.
+* The **dependency array is mandatory**.
+* If the dependencies do not change, React returns the **cached function** instead of creating a new one.
+
+**Common use cases :**
+
+* Passing callbacks to memoized child components.
+* Preventing unnecessary function recreation.
+* Optimizing performance in large applications.
