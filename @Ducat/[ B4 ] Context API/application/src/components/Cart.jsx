@@ -14,8 +14,9 @@ export default function Cart() {
       width: "35rem",
       borderCollapse: "collapse",
       boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-      fontSize: "1.4rem",
+      fontSize: "1.3rem",
       textAlign: "center",
+      letterSpacing: "0.05em",
     },
     tr: {
       backgroundColor: "#2563eb",
