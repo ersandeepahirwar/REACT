@@ -261,3 +261,35 @@ The **Context API** is a React feature used to **share data between components**
 * Language preferences.
 * User profile information.
 * Global application settings.
+
+### `useReducer()`
+
+* `useReducer()` is a **React Hook** used to manage **complex state**.
+* It is a good alternative to `useState()` when the state logic is complex or involves multiple related values.
+* State is updated by **dispatching actions** to a **reducer function**.
+* The reducer function receives the **current state** and an **action**, then returns the **new state**.
+
+#### Syntax
+
+```
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+**Common use cases :**
+
+* Managing complex state.
+* Handling multiple related state values.
+* Forms with multiple fields.
+* State that changes based on different actions.
+
+### What is a Pure Function?
+
+A **pure function** is a function that always produces the same output for the same input and has no side effects.
+
+A function is called **pure** if it follows these rules :
+
+1. It **does not modify global variables**.
+2. It **does not modify its arguments**.
+3. It **always returns the same result** for the same input.
+4. It **does not use unpredictable functions** such as `Math.random()` or `Date.now()`.
+5. The **reducer function** used with `useReducer()` should be a **pure function**.
